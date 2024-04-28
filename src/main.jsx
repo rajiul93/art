@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/coffee-details/:id",
-        element: <Details />,
+        element:<PrivetRout> <Details /></PrivetRout> ,
         loader:({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
       },
     ],

@@ -11,6 +11,7 @@ const MyArtCraft = () => {
       .then((res) => res.json())
       .then((d) => setOurData(d));
   }, [user.email]);
+ 
 
   if (loading) {
     return (
@@ -22,6 +23,9 @@ const MyArtCraft = () => {
 
   return (
     <div className="my-14 max-w-6xl mx-auto">
+
+<button   className="btn">add category</button>
+
       {ourData.map((data) => (
         <SingleCard3
           key={data._id}
