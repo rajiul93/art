@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Category = () => {
     const [category, setCategory] = useState([])
@@ -7,7 +8,7 @@ const Category = () => {
           .then((res) => res.json())
           .then((d) => setCategory(d));
       }, []);
-      console.log(category);
+    //   console.log(category);
     return (
         <>
         <div className="text-center  max-w-2xl mx-auto ">
@@ -28,7 +29,9 @@ const Category = () => {
                         <img className='w-28 h-28' src={cate.image} alt="" />
                         <h1  className='text-xl font-semibold hover:underline cursor-pointer'>{cate.category}</h1>
                         <p>{cate.shortDes.slice(0,50)}...</p>
+                        <Link to={`/category/${cate.category}`}> 
                         <button className='border shadow-xl hover:shadow-none p-2 mt-2 rounded'>Category All data</button>
+                        </Link>
                     </div>
                 })
             }

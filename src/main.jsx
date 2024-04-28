@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AddCraft from "./Page/AddCraft";
 import AllArt from "./Page/AllArt";
+import CategoryPage from "./Page/CategoryPage";
 import Details from "./Page/Details";
 import ErrorPage from "./Page/ErrorPage";
 import Home from "./Page/Home";
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
         path: "/coffee-details/:id",
         element:<PrivetRout> <Details /></PrivetRout> ,
         loader:({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+      },
+      {
+        path: "/category/:categoryName",
+        element:  <CategoryPage /> ,
+        loader:( )=>fetch(`http://localhost:5000/craft`)
       },
     ],
   },
