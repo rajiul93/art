@@ -3,15 +3,14 @@ import Category from "../component/Category";
 import CraftContainer from "../component/CraftContainer";
 import Slider from "../slidder/Slider";
 const Home = () => {
-
-
-
   return (
-    <div> 
-<Slider/> 
+    <div>
+      <Slider />
       <Achievement />
-      <CraftContainer />
- <Category/>
+      <div className="bg-secondary-content">
+        <CraftContainer />
+      </div>
+      <Category />
     </div>
   );
 };

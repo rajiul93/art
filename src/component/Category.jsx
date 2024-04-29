@@ -9,7 +9,7 @@ const Category = () => {
       .then((d) => setCategory(d));
   }, []); 
   return (
-    <div className="bg-purple-100 py-14">
+    <div className="bg-primary-content py-14">
       <div className="text-center  max-w-2xl mx-auto ">
         <h1 className="font-bold text-4xl mb-6">Art & Craft Categories</h1>
         <p className="mb-6">
@@ -26,7 +26,7 @@ const Category = () => {
           return (
             <div
               key={cate._id}
-              className="bg-white dark:bg-gray-50 hover:shadow-2xl  px-2 py-4 flex justify-center items-center flex-col text-center"
+              className="bg-base-100  dark:bg-gray-50 hover:shadow-2xl  px-2 py-4 flex justify-center items-center flex-col text-center"
             >
               <img className="w-28 h-28" src={cate.image} alt="" />
               <h1 className="text-xl font-semibold hover:underline cursor-pointer">

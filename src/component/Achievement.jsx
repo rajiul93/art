@@ -1,8 +1,9 @@
 import 'aos/dist/aos.css';
-import { GiFamilyHouse, GiHumanPyramid } from "react-icons/gi";
+import { FaHandPeace, FaOpencart } from "react-icons/fa";
+import { GiHumanPyramid } from "react-icons/gi";
 const Achievement = () => {
   return (
-    <div className="bg-white py-14">
+    <div className="bg-base-100 py-14">
 
 <div className="text-center  max-w-2xl mx-auto ">
         <h1 
@@ -20,27 +21,22 @@ const Achievement = () => {
         <div 
         // data-aos="fade-up-right" data-aos-duration="1000" 
         className="flex flex-col justify-center  items-center gap-4">
-          <GiFamilyHouse className="text-5xl text-green-600" />
+          <FaOpencart className="text-5xl text-secondary" />
           <p className="text-4xl font-bold">2050+</p>
-          <p className="text-gray-600">Completed Property</p>
+          <p className="text-gray-600">Completed Art</p>
         </div>
-        <div
-        //  data-aos="fade-up-right" data-aos-duration="1200" 
+        <div 
          className="flex flex-col justify-center  items-center gap-4">
-          <img
-            className="w-14"
-            src="https://resido-v2.smartdemowp.com/wp-content/uploads/2022/07/icon-5.png"
-            alt=""
-          />
-          <p className="text-4xl font-bold">2050+</p>
-          <p className="text-gray-600">Apartment Rent</p>
+                  <FaHandPeace className="text-5xl text-secondary" />
+
+          <p className="text-4xl font-bold">1850+</p>
+          <p className="text-gray-600">Already Handover</p>
         </div>
-        <div
-        //  data-aos="fade-up-right" data-aos-duration="1500" 
+        <div 
          
          className="flex flex-col justify-center  items-center  gap-4">
-          <GiHumanPyramid className="text-5xl text-green-600" />
-          <p className="text-4xl font-bold">2050+</p>
+          <GiHumanPyramid className="text-5xl text-secondary" />
+          <p className="text-4xl font-bold">1850+</p>
           <p className="text-gray-600">Happy Clients</p>
         </div>
       </div>
