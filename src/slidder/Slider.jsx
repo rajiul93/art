@@ -7,10 +7,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Art from "../../public/Animation/Art.json";
+import Art2 from "../../public/Animation/Art2.json";
+import Art3 from "../../public/Animation/Art3.json";
 import "./style1.css";
 const Slider = () => {
   return (
-    <div className="max-w-6xl mx-auto my-14 bg-base-100 font-primary">
+   <div className="bg-base-100 ">
+     <div className="max-w-6xl mx-auto  font-primary">
       <>
         <Swiper
           cssMode={true}
@@ -21,6 +24,17 @@ const Slider = () => {
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           className="mySwiper"
         >
+             <SwiperSlide className=" ">
+            <div className="flex justify-center flex-col md:flex md:flex-row items-center md:justify-between md:px-8 my-14 ">
+              <div className="lg:w-full text-center md:text-start  ">
+                <h1 className=" font-bold md:text-4xl">Capturing Lifes <br />Essence <span className="text-secondary">Through Art</span></h1>
+                <p className="text-sm my-4">Immerse in the beauty of portraiture. Our skilled artists capture emotions and personalities, offering timeless and personalized artworks that reflect life,s essence.</p>
+              </div>
+              <div className="w-1/2 rounded-2xl overflow-hidden">
+                <Lottie  animationData={Art3} loop={true} />
+              </div>
+            </div>
+          </SwiperSlide>
           <SwiperSlide className=" ">
             <div className="flex justify-center flex-col md:flex md:flex-row items-center md:justify-between md:px-8 my-14 ">
               <div className="lg:w-full text-center md:text-start  ">
@@ -32,30 +46,25 @@ const Slider = () => {
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="md:flex items-center justify-between">
-              <div className="lg:w-full ">
-                <h1>Hello world</h1>
+          <SwiperSlide className=" ">
+            <div className="flex justify-center flex-col md:flex md:flex-row items-center md:justify-between md:px-8 my-14 ">
+              <div className="lg:w-full text-center md:text-start  ">
+                <h1 className=" font-bold md:text-4xl">Your Gateway to  <br /><span className="text-secondary">Artistic Excellence</span></h1>
+                <p className="text-sm my-4">Your Gateway to Artistic Excellence. Explore unique art and craft pieces curated to inspire and enchant every creative soul. </p>
               </div>
-              <div>
-                <Lottie className="w-1/2" animationData={Art} loop={true} />
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="md:flex items-center justify-between">
-              <div className="lg:w-full ">
-                <h1>Hello world</h1>
-              </div>
-              <div>
-                <Lottie className="w-1/2" animationData={Art} loop={true} />
+              <div className="w-1/2 rounded-2xl overflow-hidden">
+                <Lottie  animationData={Art2} loop={true} />
               </div>
             </div>
           </SwiperSlide>
+         
+          
+         
       
         </Swiper>
       </>
     </div>
+   </div>
   );
 };
 
