@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 const LoginBySocial = () => {
   const { logByGoogle } = useContext(AuthContext);
@@ -8,9 +9,13 @@ const LoginBySocial = () => {
   const location = useLocation()
   const google = () => {
     logByGoogle()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(( ) => { 
+        Swal.fire({
+          title: 'success',
+          text: 'Welcome Voyage Vista',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
         navigate(location?.state ? location.state : "/");
       })
       .catch((e) => console.log(e.message));
