@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const AddCraft = () => {
@@ -45,11 +46,22 @@ const AddCraft = () => {
       body: JSON.stringify(newData),
     })
       .then((res) => res.json())
-      .then((d) => console.log(d));
+      .then((d) => {
+        if (d.acknowledged) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        console.log(d);
+      });
   };
   return (
     <div>
-      <h1 className="text-center font-bold text-3xl my-8"> Add Craft</h1>
+      <h1 className="text-center font-bold text-3xl my-8"> Add Your Art & Craft</h1>
 
       <form
         onSubmit={handleSubmit(handleForm)}
@@ -62,10 +74,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("name")}
+              {...register("name",{ required: true })}
               placeholder="Title"
             />
-            {errors.name && <p>Last name is required.</p>}
+            {errors.name && <p className="text-red-500"> name is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -73,10 +85,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("image")}
+              {...register("image",{ required: true })}
               placeholder="Image URL"
             />
-            {errors.image && <p>Last name is required.</p>}
+            {errors.image && <p className="text-red-500">Image is required.</p>}
           </div>
         </div>
 
@@ -87,10 +99,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("rating")}
-              placeholder="Title"
+              {...register("rating",{ required: true })}
+              placeholder="Rating"
             />
-            {errors.rating && <p>Last name is required.</p>}
+            {errors.rating && <p className="text-red-500">rating is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -98,10 +110,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("price")}
-              placeholder="Image URL"
+              {...register("price",{ required: true })}
+              placeholder="Price"
             />
-            {errors.price && <p>Last name is required.</p>}
+            {errors.price && <p className="text-red-500">Last name is required.</p>}
           </div>
         </div>
 
@@ -111,21 +123,19 @@ const AddCraft = () => {
               Customization
             </label>
 
-            
-
             <select
-              {...register("Customization")}
+              {...register("Customization",{ required: true })}
               className="select select-secondary w-full "
-              id=""
-              name=""
+              id="Customization"
+              name="Customization"
               defaultValue="yes"
               required
             >
-              <option>Yes</option>
-              <option>No</option>
+              <option value="yes">Yes</option>
+              <option value="No">No</option>
             </select>
 
-            {errors.Customization && <p>Last name is required.</p>}
+            {errors.Customization && <p className='text-red-500'>Customization option is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -133,10 +143,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("processing_time")}
+              {...register("processing_time",{ required: true })}
               placeholder="processing_time"
             />
-            {errors.processing_time && <p>Last name is required.</p>}
+            {errors.processing_time && <p className='text-red-500'>Processing_time is required.</p>}
           </div>
         </div>
         <div className="md:flex gap-6">
@@ -146,10 +156,10 @@ const AddCraft = () => {
             </label>
 
             <select
-              {...register("stockStatus")}
+              {...register("stockStatus",{ required: true })}
               className="select select-secondary w-full "
-              id=""
-              name=""
+              id="stockStatus"
+              name="stockStatus"
               defaultValue="In stock"
               required
             >
@@ -157,7 +167,7 @@ const AddCraft = () => {
               <option>Stock Out</option>
             </select>
 
-            {errors.stockStatus && <p>Last name is required.</p>}
+            {errors.stockStatus && <p className='text-red-500'>Stock Status is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -165,10 +175,10 @@ const AddCraft = () => {
             </label>
             <input
               className="input input-bordered w-full  mx-auto"
-              {...register("short_description")}
+              {...register("short_description",{ required: true })}
               placeholder="short_description"
             />
-            {errors.short_description && <p>Last name is required.</p>}
+            {errors.short_description && <p className='text-red-500'>Short description is required.</p>}
           </div>
         </div>
         <div className="md:flex gap-6">
@@ -177,26 +187,26 @@ const AddCraft = () => {
               Ssub_category
             </label>
             <select
-              {...register("sub_category")}
+              {...register("sub_category",{ required: true })}
               className="select select-secondary w-full "
-              id="customization"
-              name="customization"
+              id="sub_category"
+              name="sub_category"
               defaultValue="yes"
               required
             >
-              <option>Landscape Painting</option>
-              <option>Portrait Drawing:</option>
-              <option>Watercolour Painting</option>
-              <option>Oil Painting</option>
-              <option>Charcoal Sketching</option>
-              <option>Cartoon Drawing</option>
+              <option value="Landscape Painting">Landscape Painting</option>
+              <option value="Portrait Drawing:">Portrait Drawing:</option>
+              <option value="Watercolour Painting">Watercolour Painting</option>
+              <option value="Oil Painting">Oil Painting</option>
+              <option value="Charcoal Sketching">Charcoal Sketching</option>
+              <option value="Cartoon Drawing">Cartoon Drawing</option>
             </select>
 
-            {errors.stockStatus && <p>Last name is required.</p>}
+            {errors.sub_category && <p className='text-red-500'>Sub category is required.</p>}
           </div>
         </div>
 
-        <button type="submit" className="btn btn-active w-full btn-secondary">
+        <button type="submit" className="btn btn-active w-full mb-14 btn-secondary">
           Add Craft
         </button>
       </form>

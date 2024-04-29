@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-// import SingleCard2 from "../component/SingleCard2";
 
 const AllArt = () => {
   const datas = useLoaderData();
@@ -8,8 +7,7 @@ const AllArt = () => {
       <h1 className="text-center font-bold text-3xl my-8">All Art</h1>
 
       <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
+        <table className="table"> 
           <thead>
             <tr>
               <th>Image</th>
@@ -22,12 +20,9 @@ const AllArt = () => {
             {datas.map((item) => {
               const {
                 image,
-                name,
-                short_description,
+                name, 
                 _id,
-                sub_category,
-                rating,
-                price,
+                sub_category,  
                 processing_time,
               } = item;
 

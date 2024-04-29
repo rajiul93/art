@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdatePage = () => {
@@ -20,10 +21,8 @@ const {
     name,
     image,
     rating,
-    price,
-    Customization,
-    processing_time,
-    stockStatus,
+    price, 
+    processing_time, 
     short_description,
     sub_category,
   } = singleData;
@@ -71,7 +70,17 @@ console.log(singleData);
     }
 )
       .then((res) => res.json())
-      .then((d) => console.log(d));
+      .then((d) => {
+        if (d.acknowledged) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your work has been Updated",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      });
   };
   return (
     <div>
@@ -92,7 +101,7 @@ console.log(singleData);
               {...register("name",{ required: true })}
               placeholder="Title"
             />
-            {errors.name && <p>Last name is required.</p>}
+            {errors.name && <p className='text-red-500'> Title is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -105,7 +114,7 @@ console.log(singleData);
               {...register("image",{ required: true })}
               placeholder="Image URL"
             />
-            {errors.image && <p>Last name is required.</p>}
+            {errors.image && <p className='text-red-500'>image is required.</p>}
           </div>
         </div>
 
@@ -122,7 +131,7 @@ console.log(singleData);
               placeholder="Title"
             />
             
-            {errors.rating && <p>Last name is required.</p>}
+            {errors.rating && <p className='text-red-500'>Title is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -135,24 +144,29 @@ console.log(singleData);
               {...register("price",{ required: true })}
               placeholder="Image URL"
             />
-            {errors.price && <p>Last name is required.</p>}
+            {errors.price && <p className='text-red-500'>Price is required.</p>}
           </div>
         </div>
 
         <div className="md:flex gap-6">
-          <div className="w-full">
+        <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
               Customization
             </label>
 
-            <input
-            defaultValue={Customization}
-
-              className="input input-bordered w-full  mx-auto"
+            <select
               {...register("Customization",{ required: true })}
-              placeholder="Customization"
-            />
-            {errors.Customization && <p>Last name is required.</p>}
+              className="select select-secondary w-full "
+              id="Customization"
+              name="Customization"
+              defaultValue="yes"
+              required
+            >
+              <option value="yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            {errors.Customization && <p className='text-red-500'>Customization option is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -165,23 +179,28 @@ console.log(singleData);
               {...register("processing_time",{ required: true })}
               placeholder="processing_time"
             />
-            {errors.processing_time && <p>Last name is required.</p>}
+            {errors.processing_time && <p className='text-red-500'>processing_time is required.</p>}
           </div>
         </div>
         <div className="md:flex gap-6">
-          <div className="w-full">
+        <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
               Stock Status
             </label>
-            <input
-                       defaultValue={stockStatus}
 
-
-              className="input input-bordered w-full  mx-auto"
+            <select
               {...register("stockStatus",{ required: true })}
-              placeholder="stockStatus"
-            />
-            {errors.stockStatus && <p>Last name is required.</p>}
+              className="select select-secondary w-full "
+              id="stockStatus"
+              name="stockStatus"
+              defaultValue="In stock"
+              required
+            >
+              <option>In stock</option>
+              <option>Stock Out</option>
+            </select>
+
+            {errors.stockStatus && <p className='text-red-500'>Stock Status is required.</p>}
           </div>
           <div className="w-full">
             <label className="my-8 text-xl font-medium" htmlFor="">
@@ -194,7 +213,7 @@ console.log(singleData);
               {...register("short_description",{ required: true })}
               placeholder="short_description"
             />
-            {errors.short_description && <p>Last name is required.</p>}
+            {errors.short_description && <p> Short description is required.</p>}
           </div>
         </div>
         <div className="md:flex gap-6">

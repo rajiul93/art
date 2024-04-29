@@ -5,13 +5,13 @@ import Swal from "sweetalert2";
 const SingleCard3 = ({ data,afterDelete,myData }) => {
   const {
     image,
-    sub_category,
+    stockStatus,
     name,
     _id,
     userName,
     rating,
     price,
-    processing_time,
+    Customization,
     short_description,
   } = data;
   const handelDelete = (_id) => {
@@ -42,17 +42,11 @@ const SingleCard3 = ({ data,afterDelete,myData }) => {
           });
       }
     });
-
-    // fetch(`http://localhost:5000/delete-craft/${_id}`, {
-    //   method: "DELETE",
-    // })
-    // .then(res=>res.json())
-    // .then(data => console.log(data))
   };
 
   return (
-    <div className=" md:flex justify-between rounded-lg items-center mb-5  p-2 md:p-8 py-0  bg-base-100 shadow-xl">
-      <div className="md:flex gap-6 items-start w-3/4 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 p-2">
+    <div className=" md:flex justify-between rounded-lg items-center mb-8  p-2 md:p-8 py-0  bg-base-100 shadow-xl">
+      <div className="md:flex gap-6 items-center md:items-start md:w-3/4 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 p-2">
         <div>
           <figure className="max-w-[300px] ">
             <img className="rounded-lg" src={image} alt="Album" />
@@ -63,13 +57,13 @@ const SingleCard3 = ({ data,afterDelete,myData }) => {
           <h2 className="card-title">{name}</h2>
           <p>{short_description.slice(0,50)}</p>
           <h1>Author : {userName}</h1>
-          <h1>Processing Time: {processing_time}</h1>
+          <h1>Customization: {Customization}</h1>
           <h1>Price: ${price}</h1>
           <h1>Rating: {rating}</h1>
-          <h1>Sub_category: {sub_category}</h1>
+          <h1>Stock Status: {stockStatus}</h1>
         </div>
       </div>
-      <div className="flex flex-col gap-5 ">
+      <div className="flex flex-col gap-5 mt-5 md:mt-0 ">
         <Link to={`/update/${_id}`}>
         
         <button className="btn btn-success w-full"> Update </button>
@@ -78,7 +72,7 @@ const SingleCard3 = ({ data,afterDelete,myData }) => {
           Delete
         </button>
         <Link to={`/coffee-details/${_id}`}>
-          <button className="btn btn-secondary">View Details</button>
+          <button className="btn btn-secondary w-full">View Details</button>
         </Link>
       </div>
     </div>
