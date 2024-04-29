@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Category = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/categoryCollection`)
+    fetch(`https://new-art.vercel.app/categoryCollection`)
       .then((res) => res.json())
       .then((d) => setCategory(d));
   }, []); 

@@ -11,7 +11,7 @@ const MyArtCraft = () => {
   const { register, handleSubmit, } = useForm(); 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/craft-email/${user.email}`)
+    fetch(`https://new-art.vercel.app/craft-email/${user.email}`)
       .then((res) => res.json())
       .then((d) => {
         setOurData(d)

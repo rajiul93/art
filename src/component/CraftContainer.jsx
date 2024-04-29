@@ -6,7 +6,7 @@ const CraftContainer = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
 
-    fetch('https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft')
+    fetch('https://new-art.vercel.app/craft')
     .then(res=>res.json())
     .then(d=>setData(d))
      

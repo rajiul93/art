@@ -1,15 +1,10 @@
-import { useEffect } from "react";
 import Achievement from "../component/Achievement";
 import Category from "../component/Category";
 import CraftContainer from "../component/CraftContainer";
 import Hero from "../component/Hero";
 
 const Home = () => {
-  useEffect(() => {
-    fetch("https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+
 
 
   return (

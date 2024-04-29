@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // loader:()=>fetch('http://localhost:5000/coffee')
+        // loader:()=>fetch('https://new-art.vercel.app/coffee')
       },
       {
         path: "/login",
@@ -38,13 +38,13 @@ const router = createBrowserRouter([
       {
         path: "/all-art",
         element: <AllArt />,
-        loader:()=>fetch('https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft')
+        loader:()=>fetch('https://new-art.vercel.app/craft')
 
       },
       {
         path: "/my-art-craft",
         element:<PrivetRout><MyArtCraft /></PrivetRout> ,
-        loader:()=>fetch('http://localhost:5000/craft')
+        loader:()=>fetch('https://new-art.vercel.app/craft')
 
 
       },
@@ -55,17 +55,17 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element:<PrivetRout><UpdatePage /></PrivetRout> ,
-        loader:({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+        loader:({params})=>fetch(`https://new-art.vercel.app/craft/${params.id}`)
       },
       {
         path: "/coffee-details/:id",
         element:<PrivetRout> <Details /></PrivetRout> ,
-        loader:({params})=>fetch(`http://localhost:5000/craft/${params.id}`)
+        loader:({params})=>fetch(`https://new-art.vercel.app/craft/${params.id}`)
       },
       {
         path: "/category/:categoryName",
         element:  <CategoryPage /> ,
-        loader:( )=>fetch(`http://localhost:5000/craft`)
+        loader:( )=>fetch(`https://new-art.vercel.app/craft`)
       },
     ],
   },
