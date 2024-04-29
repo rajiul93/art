@@ -13,7 +13,7 @@ const UpdatePage = () => {
 const [singleData, setSingleData] = useState({})
 console.log(id.id);
 useEffect(()=>{
-    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft/${id.id}`)
+    fetch(`https://new-art.vercel.app/craft/${id.id}`)
     .then((res) => res.json())
     .then((d) => setSingleData(d));
 },[id])
