@@ -24,7 +24,7 @@ const Login = () => {
       .then(() => {
         Swal.fire({
           title: 'success',
-          text: 'Welcome Voyage Vista',
+          text: 'Welcome Art Gallery',
           icon: 'success',
           confirmButtonText: 'OK'
         })

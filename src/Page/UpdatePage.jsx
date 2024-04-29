@@ -60,7 +60,7 @@ console.log(singleData);
       sub_category,
     };
 // console.log(id);
-    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft-update/${id.id}`,
+    fetch(`https://new-art.vercel.app/craft-update/${id.id}`,
      {
       method: "PUT",
       headers: {

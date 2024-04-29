@@ -18,7 +18,9 @@ const LoginBySocial = () => {
         })
         navigate(location?.state ? location.state : "/");
       })
-      .catch((e) => console.log(e.message));
+      .catch((e) => {
+        
+      });
   };
 
   return (

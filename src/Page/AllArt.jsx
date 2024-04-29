@@ -65,8 +65,4 @@ const AllArt = () => {
 
 export default AllArt;
 
-{
-  /* <div className="md:grid grid-cols-2 gap-8 max-w-6xl mx-auto mb-14 items-start">
-{datas?.map(data=><SingleCard2 key={data._id} data={data}/>)  }
- </div> */
-}
+ 

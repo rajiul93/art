@@ -38,7 +38,7 @@ const AddCraft = () => {
       sub_category,
     };
 
-    fetch("https://new-dvcsziwa2-rajiul93s-projects.vercel.app/add-craft", {
+    fetch("https://new-art.vercel.app/add-craft", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

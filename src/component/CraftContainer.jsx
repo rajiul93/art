@@ -11,8 +11,7 @@ const CraftContainer = () => {
     .then(d=>setData(d))
      
    
-  }, []);
-// console.log(data);
+  }, []); 
   return (
     <section className=" sm:py-12  max-w-6xl mx-auto   secondary-font">
           <div className="text-center  max-w-2xl mx-auto ">
