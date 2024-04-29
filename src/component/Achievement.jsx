@@ -11,8 +11,7 @@ const Achievement = () => {
         <p 
         // data-aos="fade-up-right"
         >
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+     A timeless language transcending boundaries, art captures the human experience in strokes of brilliance.
         </p>
       </div>
      

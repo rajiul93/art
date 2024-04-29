@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import SingleCard2 from "../component/SingleCard2";
-
+import SingleCard3 from "../component/SingleCard3";
 const MyArtCraft = () => {
   const { user, loading } = useContext(AuthContext);
 
@@ -23,18 +22,26 @@ const MyArtCraft = () => {
 
   return (
     <div className="my-14 max-w-6xl mx-auto">
+// {ourData.map((data) => (
+  <SingleCard3
+  afterDelete={setOurData}
+    key={data._id} 
+    myData={ourData}
+    data={data}
+  />
+))}
 
-<button   className="btn">add category</button>
-
-      {ourData.map((data) => (
-        <SingleCard2
-          key={data._id} 
-          myData={ourData}
-          data={data}
-        />
-      ))}
     </div>
   );
 };
 
 export default MyArtCraft;
+
+// {ourData.map((data) => (
+//   <SingleCard3
+//   afterDelete={setOurData}
+//     key={data._id} 
+//     myData={ourData}
+//     data={data}
+//   />
+// ))}

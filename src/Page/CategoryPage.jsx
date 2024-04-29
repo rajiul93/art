@@ -10,9 +10,9 @@ const CategoryPage = () => {
   const selectedCategory = data.filter(
     (items) => items.sub_category == categoryName
   );
-  console.log(selectedCategory);
+ 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-6 my-14">
+    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-6 my-14 ">
       {selectedCategory.map((data) => (
         <SingleCard2 key={data._id} data={data}></SingleCard2>
       ))}
