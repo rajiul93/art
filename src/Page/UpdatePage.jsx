@@ -13,7 +13,7 @@ const UpdatePage = () => {
 const [singleData, setSingleData] = useState({})
 console.log(id.id);
 useEffect(()=>{
-    fetch(`http://localhost:5000/craft/${id.id}`)
+    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft/${id.id}`)
     .then((res) => res.json())
     .then((d) => setSingleData(d));
 },[id])
@@ -60,7 +60,7 @@ console.log(singleData);
       sub_category,
     };
 // console.log(id);
-    fetch(`http://localhost:5000/craft-update/${id.id}`,
+    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft-update/${id.id}`,
      {
       method: "PUT",
       headers: {

@@ -25,7 +25,7 @@ const SingleCard3 = ({ data,afterDelete,myData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/delete-craft/${_id}`, {
+        fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/delete-craft/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

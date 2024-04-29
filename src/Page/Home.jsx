@@ -6,7 +6,7 @@ import Hero from "../component/Hero";
 
 const Home = () => {
   useEffect(() => {
-    fetch("https://art-server-sigma.vercel.app/craft")
+    fetch("https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft")
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, []);

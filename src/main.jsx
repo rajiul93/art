@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: "/all-art",
         element: <AllArt />,
-        loader:()=>fetch('http://localhost:5000/craft')
+        loader:()=>fetch('https://new-dvcsziwa2-rajiul93s-projects.vercel.app/craft')
 
       },
       {

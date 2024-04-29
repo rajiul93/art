@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 const Category = () => {
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/categoryCollection`)
+    fetch(`https://new-dvcsziwa2-rajiul93s-projects.vercel.app/categoryCollection`)
       .then((res) => res.json())
       .then((d) => setCategory(d));
-  }, []);
-  //   console.log(category);
+  }, []); 
   return (
     <div className="bg-purple-100 py-14">
       <div className="text-center  max-w-2xl mx-auto ">
