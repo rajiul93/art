@@ -14,8 +14,8 @@ const MyArtCraft = () => {
     fetch(`https://new-art.vercel.app/craft-email/${user.email}`)
       .then((res) => res.json())
       .then((d) => {
-        setOurData(d)
         setFilterData(d)
+        setOurData(d)
       }); 
   }, [user.email]); 
   if (loading) {
