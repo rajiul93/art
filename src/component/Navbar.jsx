@@ -113,11 +113,13 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
+          <Link to='/'>
           <img
             className="w-24"
             src="https://i.ibb.co/FgtYBtM/mokeup-removebg-preview.png"
             alt=""
           />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="space-x-4 text-[18px]  menu-horizontal px-1">
