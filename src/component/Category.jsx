@@ -35,7 +35,7 @@ const Category = () => {
     </div>
   </div>
   <div className="skeleton h-32 w-full"></div>
-</div>: <div className="grid px-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-12 max-w-6xl mx-auto  mb-14">
+</div>: <div className="grid px-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-12 max-w-6xl mx-auto  mb-14">
         {category.map((cate) => {
           return (
             <div

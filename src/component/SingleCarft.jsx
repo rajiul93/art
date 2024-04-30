@@ -35,4 +35,5 @@ export default SingleCarft;
 
 SingleCarft.propTypes = { 
     carft: PropTypes.object, 
+    loding:PropTypes.bool
 }

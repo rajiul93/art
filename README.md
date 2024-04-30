@@ -1,5 +1,5 @@
 [Text](https://update-art.netlify.app/)
-- Our website category are Art and Craft and name (Craft Corner)
+- Our website category are Art and Craft and name (selected category name: Painting and Drawing )
 - Requirement  packages are React simple type writer and lottie react
 - add Authentication as like email password, google, github. 
 - profile page is a protective route  
