@@ -7,7 +7,7 @@ const MyArtCraft = () => {
 
   const [ourData, setOurData] = useState([]);
   const [filterData, setFilterData] = useState(ourData)
-
+console.log(user);
   const { register, handleSubmit, } = useForm(); 
 
   useEffect(() => {

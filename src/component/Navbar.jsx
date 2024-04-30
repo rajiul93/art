@@ -37,8 +37,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-red-500 font-extralight  bg-white"
-              : "font-extralight"
+              ? "text-red-500 font-extralight  bg-base-100"
+              : "font-extralight text-base-content"
           }
         >
           Home
@@ -50,8 +50,8 @@ const Navbar = () => {
           to="/all-art"
           className={({ isActive }) =>
             isActive
-              ? "text-red-500  font-extralight bg-white"
-              : "font-extralight"
+              ? "text-red-500  font-extralight bg-base-100"
+              : "font-extralight text-base-content"
           }
         >
           Art & craft Items
@@ -63,8 +63,8 @@ const Navbar = () => {
           to="/add-craft"
           className={({ isActive }) =>
             isActive
-              ? "text-red-500 font-extralight  bg-white"
-              : "font-extralight"
+              ? "text-red-500 font-extralight  bg-base-100"
+              : "font-extralight text-base-content"
           }
         >
           Add Craft
@@ -75,8 +75,8 @@ const Navbar = () => {
           to={`/my-art-craft`}
           className={({ isActive }) =>
             isActive
-              ? "text-red-500 font-extralight  bg-white"
-              : "font-extralight"
+              ? "text-red-500 font-extralight  bg-base-100"
+              : "font-extralight text-base-content"
           }
         >
           My Art & Craft
