@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   const [category, setCategory] = useState([]);
+  const [loding,setLoading]= useState(true)
+
   useEffect(() => {
     fetch(`https://new-art.vercel.app/categoryCollection`)
       .then((res) => res.json())
-      .then((d) => setCategory(d));
+      .then((d) => {
+        setCategory(d)
+        setLoading(false)
+      });
   }, []); 
   return (
     <div className="bg-primary-content py-14">
@@ -21,7 +26,16 @@ const Category = () => {
         </p>
       </div>
 
-      <div className="grid px-2 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto  mb-14">
+     {loding?<div className="flex flex-col gap-4 w-52">
+  <div className="flex gap-4 items-center">
+    <div className="skeleton w-16 h-16 rounded-full shrink-0"></div>
+    <div className="flex flex-col gap-4">
+      <div className="skeleton h-4 w-20"></div>
+      <div className="skeleton h-4 w-28"></div>
+    </div>
+  </div>
+  <div className="skeleton h-32 w-full"></div>
+</div>: <div className="grid px-2 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto  mb-14">
         {category.map((cate) => {
           return (
             <div
@@ -41,7 +55,7 @@ const Category = () => {
             </div>
           );
         })}
-      </div>
+      </div>}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllArt = () => {
   const datas = useLoaderData();
   return (
-    <div className="max-w-6xl  mx-auto">
+    <div className="max-w-6xl mt-14  mx-auto">
       <h1 className="text-center font-bold text-3xl my-8">All Art</h1>
 
       <div className="overflow-x-auto">

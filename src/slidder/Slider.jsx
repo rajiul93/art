@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import Lottie from "lottie-react";
+import { Typewriter } from 'react-simple-typewriter';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,7 +13,7 @@ import Art3 from "../../public/Animation/Art3.json";
 import "./style1.css";
 const Slider = () => {
   return (
-   <div className="bg-base-100 ">
+   <div className="bg-base-100 mt-14">
      <div className="max-w-6xl mx-auto  font-primary">
       <>
         <Swiper
@@ -27,7 +28,31 @@ const Slider = () => {
              <SwiperSlide className=" ">
             <div className="flex justify-center flex-col md:flex md:flex-row items-center md:justify-between md:px-8 my-14 ">
               <div className="lg:w-full text-center md:text-start  ">
-                <h1 className=" font-bold md:text-4xl">Capturing Lifes <br />Essence <span className="text-secondary">Through Art</span></h1>
+                <h1 className=" font-bold md:text-4xl leading-8">Capturing Lifes <br />Essence <span className="text-secondary">
+                  
+                  
+                  
+                  
+
+
+                  <Typewriter
+            words={['Through Art', 'Through the Lens of Art', 'With Artful Technique', 'Via Creative Channels!']}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            
+          />
+
+
+
+
+
+
+                  
+                  </span></h1>
                 <p className="text-sm my-4">Immerse in the beauty of portraiture. Our skilled artists capture emotions and personalities, offering timeless and personalized artworks that reflect life,s essence.</p>
               </div>
               <div className="w-1/2 rounded-2xl overflow-hidden">

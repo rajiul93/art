@@ -4,14 +4,21 @@ import SingleCarft from "./SingleCarft";
 
 const CraftContainer = () => {
   const [data, setData] = useState([]);
+  const [loding,setLoading]= useState(true)
+
   useEffect(() => {
 
     fetch('https://new-art.vercel.app/craft')
     .then(res=>res.json())
-    .then(d=>setData(d))
+    .then(d=>{
+      setData(d)
+      setLoading(false)
+    })
      
    
   }, []); 
+
+   
   return (
     <section className=" sm:py-12  max-w-6xl mx-auto   secondary-font">
           <div className="text-center  max-w-2xl mx-auto ">
@@ -23,7 +30,7 @@ const CraftContainer = () => {
 
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 items-center">
           {data?.slice(0,6).map((carft) => (
-            <SingleCarft key={carft._id} carft={carft} />
+            <SingleCarft loding={loding}   key={carft._id} carft={carft} />
           ))}
         </div>
       </div>

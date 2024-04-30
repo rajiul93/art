@@ -9,7 +9,7 @@ const Details = () => {
     const data = useLoaderData(); 
     const {   image,sub_category,name ,userName,rating,price,processing_time,short_description,Customization} = data;
     return (
-        <section className="">
+        <section className=" mt-14">
         <ToastContainer />
    <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
      <div

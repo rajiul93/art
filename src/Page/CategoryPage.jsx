@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import SingleCard2 from "../component/SingleCard2";
 
 const CategoryPage = () => {
-  const data = useLoaderData(); 
+  const data = useLoaderData();  
   const { categoryName } = useParams();
 //   if (!categoryName) {
 //     return <>No data</>

@@ -7,7 +7,7 @@ const MyArtCraft = () => {
 
   const [ourData, setOurData] = useState([]);
   const [filterData, setFilterData] = useState(ourData)
-console.log(user);
+
   const { register, handleSubmit, } = useForm(); 
 
   useEffect(() => {
@@ -19,20 +19,11 @@ console.log(user);
       }); 
   }, [user.email]); 
 
-  if (!user.email) {
-    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto mt-14">
-     <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt giv email property </h1>
-     <p>you should choice another option for log </p>
-     <ul className="text-center">
-       <li>
-         you should log Out 
-       </li>
-       <li>
-         then login by google or create user use by email and password
-       </li>
-     </ul>
-    </div> 
-   }
+  // if (!ourData) {
+  //   return <div>
+  //     <span className="loading loading-bars loading-lg"></span>
+  //   </div>
+  // }
 
   if (loading) {
     return (
@@ -41,7 +32,23 @@ console.log(user);
       </div>
     );
   }
- 
+  if (!user.email) {
+    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto h-screen align-middle">
+     <div>
+     <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt give email property </h1>
+     <p>you should choice another option for login </p>
+     <ul className="text-center">
+       <li>
+         you should log Out 
+       </li>
+       <li>
+         then login by google or create user use by email and password
+       </li>
+     </ul>
+     </div>
+    </div> 
+   }
+
  
 const onSubmit = data => { 
   const newData = ourData.filter(items=> items.Customization ==data.customization)

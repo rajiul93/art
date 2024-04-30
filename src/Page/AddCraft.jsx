@@ -15,9 +15,10 @@ const AddCraft = () => {
     formState: { errors },
   } = useForm();
   if (!user.email) {
-    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto mt-14">
-     <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt giv email property </h1>
-     <p>you should choice another option for log </p>
+    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto h-screen align-middle">
+     <div>
+     <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt give email property </h1>
+     <p>you should choice another option for login </p>
      <ul className="text-center">
        <li>
          you should log Out 
@@ -26,6 +27,7 @@ const AddCraft = () => {
          then login by google or create user use by email and password
        </li>
      </ul>
+     </div>
     </div> 
    }
 
