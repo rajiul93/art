@@ -1,8 +1,10 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Text](https://update-art.netlify.app/)
+- Our website category are Art and Craft and name (Craft Corner)
+- Requirement  packages are React simple type writer and lottie react
+- add Authentication as like email password, google, github. 
+- profile page is a protective route  
+- you can not show details page and add craft and also category details page without login 
+- we use registration page all requirement as your direction.
+- our extra route are blog and contact page
+- also use dark and light mood
+- if you want add product , you can do that after login but you have to nee email 
