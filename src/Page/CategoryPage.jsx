@@ -12,10 +12,12 @@ const CategoryPage = () => {
   );
  
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-6 my-14 ">
-      {selectedCategory.map((data) => (
+    <div className=" my-14 mt-[100px] bg-base-100 w-full h-screen">
+     <div className="grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-6">
+     {selectedCategory.map((data) => (
         <SingleCard2 key={data._id} data={data}></SingleCard2>
       ))}
+     </div>
     </div>
   );
 };

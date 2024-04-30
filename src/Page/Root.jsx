@@ -5,9 +5,9 @@ import Navbar from '../component/Navbar';
 
 const Root = () => {
     return (
-        <div className='bg-gray-200 '>
+        <div className='bg-base-100 '>
             <Navbar/>
-            <div className="min-h-screen">
+            <div className="min-h-screen mt-[100px]">
 
             <Outlet/>
             </div>

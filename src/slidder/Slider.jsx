@@ -13,7 +13,7 @@ import Art3 from "../../public/Animation/Art3.json";
 import "./style1.css";
 const Slider = () => {
   return (
-   <div className="bg-base-100 mt-14">
+   <div className="bg-base-100 ">
      <div className="max-w-6xl mx-auto  font-primary">
       <>
         <Swiper

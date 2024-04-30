@@ -35,12 +35,12 @@ const Category = () => {
     </div>
   </div>
   <div className="skeleton h-32 w-full"></div>
-</div>: <div className="grid px-2 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto  mb-14">
+</div>: <div className="grid px-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-12 max-w-6xl mx-auto  mb-14">
         {category.map((cate) => {
           return (
             <div
               key={cate._id}
-              className="bg-base-100  dark:bg-gray-50 hover:shadow-2xl  px-2 py-4 flex justify-center items-center flex-col text-center"
+              className="  bg-base-100 hover:shadow-none shadow-2xl  px-2 py-4 flex justify-center space-y-4 items-center flex-col text-center"
             >
               <img className="w-28 h-28" src={cate.image} alt="" />
               <h1 className="text-xl font-semibold hover:underline cursor-pointer">
@@ -48,8 +48,8 @@ const Category = () => {
               </h1>
               <p>{cate.shortDes.slice(0, 50)}...</p>
               <Link to={`/category/${cate.category}`}>
-                <button className="border shadow-xl hover:shadow-none p-2 mt-2 rounded">
-                  Category All data
+                <button className="border shadow-2xl hover:shadow-none p-2 mt-2 rounded">
+                  This category data
                 </button>
               </Link>
             </div>

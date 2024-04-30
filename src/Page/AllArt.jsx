@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllArt = () => {
   const datas = useLoaderData();
   return (
-    <div className="max-w-6xl mt-14  mx-auto">
+    <div className="max-w-6xl mt-[91px]  mx-auto font-primary">
       <h1 className="text-center font-bold text-3xl my-8">All Art</h1>
 
       <div className="overflow-x-auto">
@@ -50,7 +50,7 @@ const AllArt = () => {
                   <td>{sub_category}</td>
                   <th>
                     <Link to={`/coffee-details/${_id}`}>
-                      <button className="btn btn-secondary">details</button>
+                      <button className="btn btn-secondary">Details</button>
                     </Link>
                   </th>
                 </tr>

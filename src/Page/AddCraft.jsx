@@ -15,7 +15,7 @@ const AddCraft = () => {
     formState: { errors },
   } = useForm();
   if (!user.email) {
-    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto h-screen align-middle">
+    return <div className="flex mt-[91px]  flex-col justify-center items-center max-w-2xl mx-auto h-screen align-middle">
      <div>
      <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt give email property </h1>
      <p>you should choice another option for login </p>
@@ -81,8 +81,8 @@ const AddCraft = () => {
       });
   };
   return (
-    <div>
-      <h1 className="text-center font-bold text-3xl my-8"> Add Your Art & Craft</h1>
+    <div className="my-14 bg-base-100">
+      <h1 className="text-center font-bold text-3xl my-8 mt-[91px] font-primary"> Add Your Art & Craft</h1>
 
       <form
         onSubmit={handleSubmit(handleForm)}

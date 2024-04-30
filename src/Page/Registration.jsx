@@ -78,7 +78,7 @@ const Registration = () => {
         <button type="submit" className="btn btn-active w-full btn-secondary"> Registration</button>
       </form>
       <div className="text-center mt-5">
-        <p >You have account go  <Link to='/login' className="text-blue-900 ms-2">Registration</Link></p>
+        <p >You have account go  <Link to='/login' className="text-blue-900 ms-2">Log In</Link></p>
       
       <LoginBySocial />
       </div>
