@@ -5,11 +5,30 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const AddCraft = () => {
   const { user } = useContext(AuthContext);
+
+
+  
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  if (!user.email) {
+    return <div className="flex flex-col justify-center items-center max-w-2xl mx-auto mt-14">
+     <h1 className="text-xl font-bold">Maybe you login by git hub. that process didnt giv email property </h1>
+     <p>you should choice another option for log </p>
+     <ul className="text-center">
+       <li>
+         you should log Out 
+       </li>
+       <li>
+         then login by google or create user use by email and password
+       </li>
+     </ul>
+    </div> 
+   }
+
   const handleForm = (data) => {
     const {
       name,
