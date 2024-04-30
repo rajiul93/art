@@ -8,7 +8,7 @@ const Footer = () => {
         <Link to='/'>
         <img
             className="w-24"
-            src="https://i.ibb.co/tQmDr8b/logo.jpg"
+            src="https://i.ibb.co/FgtYBtM/mokeup-removebg-preview.png"
             alt=""
           />
         </Link>
