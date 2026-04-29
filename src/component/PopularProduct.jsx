@@ -1,8 +1,7 @@
+import PropTypes from "prop-types";
 import SingleCoffee from "./SingleCoffee";
 
- 
-
-const PopularProduct = ({popularProduct}) => {
+const PopularProduct = ({ popularProduct }) => {
 
     return (
         <div>
@@ -21,3 +20,12 @@ const PopularProduct = ({popularProduct}) => {
 };
 
 export default PopularProduct;
+
+PopularProduct.propTypes = {
+  popularProduct: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      photo: PropTypes.string,
+    })
+  ).isRequired,
+};
