@@ -30,55 +30,46 @@ const Navbar = () => {
         // An error happened.
       });
   };
-  const navItem = (
+
+  /** `brand` = on primary bar; `light` = mobile dropdown on base-100 */
+  const navLinkClass = (isActive, surface) => {
+    const line =
+      "inline-block border-b-2 pb-0.5 transition-[color,border-color,opacity] duration-200 ";
+    if (surface === "brand") {
+      return (
+        line +
+        (isActive
+          ? "border-white text-white font-medium tracking-tight"
+          : "border-transparent text-white/80 hover:text-white font-light tracking-tight")
+      );
+    }
+    return (
+      line +
+      (isActive
+        ? "border-[color:var(--color-primary-brand)] font-medium text-base-content"
+        : "border-transparent font-light text-base-content/75 hover:text-[color:var(--color-primary-brand)]")
+    );
+  };
+
+  const renderNavItems = (surface) => (
     <>
       <li>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "text-red-500 font-extralight  bg-base-100"
-              : "font-extralight text-base-content"
-          }
-        >
+        <NavLink to="/" className={({ isActive }) => navLinkClass(isActive, surface)}>
           Home
         </NavLink>
       </li>
-
       <li>
-        <NavLink
-          to="/all-art"
-          className={({ isActive }) =>
-            isActive
-              ? "text-red-500  font-extralight bg-base-100"
-              : "font-extralight text-base-content"
-          }
-        >
+        <NavLink to="/all-art" className={({ isActive }) => navLinkClass(isActive, surface)}>
           Art & craft Items
         </NavLink>
       </li>
-
       <li>
-        <NavLink
-          to="/add-craft"
-          className={({ isActive }) =>
-            isActive
-              ? "text-red-500 font-extralight  bg-base-100"
-              : "font-extralight text-base-content"
-          }
-        >
+        <NavLink to="/add-craft" className={({ isActive }) => navLinkClass(isActive, surface)}>
           Add Craft
         </NavLink>
       </li>
       <li>
-        <NavLink
-          to={`/my-art-craft`}
-          className={({ isActive }) =>
-            isActive
-              ? "text-red-500 font-extralight  bg-base-100"
-              : "font-extralight text-base-content"
-          }
-        >
+        <NavLink to="/my-art-craft" className={({ isActive }) => navLinkClass(isActive, surface)}>
           My Art & Craft
         </NavLink>
       </li>
@@ -86,11 +77,15 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-base-100 dark:bg-slate-800 w-full fixed top-0 z-10 shadow-2xl ">
-      <div className="navbar max-w-6xl mx-auto">
+    <div className="w-full fixed top-0 z-10 bg-[color:var(--color-primary-brand)] shadow-2xl">
+      <div className="navbar max-w-6xl mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-active lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost text-white border-white/30 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -110,7 +105,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {navItem}
+              {renderNavItems("light")}
             </ul>
           </div>
           <Link to='/'>
@@ -123,12 +118,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="space-x-4 text-[18px]  menu-horizontal px-1">
-            {navItem}
+            {renderNavItems("brand")}
           </ul>
         </div>
         <div className="navbar-end">
-          <label className="swap swap-rotate  ">
-            <input type="checkbox" className="toggle" onChange={handleToggle} />
+          <label className="swap swap-rotate">
+            <input
+              type="checkbox"
+              className="toggle [--tglbg:white] border-white/40 bg-white/15 text-white transition-[background-color,border-color,color] checked:border-[color:var(--color-primary-brand)] checked:bg-[color:var(--color-primary-brand)] checked:text-white hover:bg-white/25 checked:hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50"
+              onChange={handleToggle}
+            />
           </label>
 
           <div className="dropdown dropdown-end">
@@ -155,7 +154,10 @@ const Navbar = () => {
               className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               {user && (
-                <button onClick={singOut} className="btn btn-secondary ms-2">
+                <button
+                  onClick={singOut}
+                  className="btn ms-2 border-none bg-white text-[color:var(--color-primary-brand)] hover:bg-white/90"
+                >
                   Sin Out
                 </button>
               )}
@@ -164,11 +166,16 @@ const Navbar = () => {
 
           {!user && (
             <>
-              <Link to="/login" className="btn">
+              <Link
+                to="/login"
+                className="btn btn-outline border-white text-white hover:bg-white hover:text-[color:var(--color-primary-brand)] hover:border-white"
+              >
                 Login
               </Link>
               <Link to="/registration" className=" ms-2 hidden md:block">
-                <button className="btn btn-secondary">Registration</button>
+                <button className="btn border-none bg-white text-[color:var(--color-primary-brand)] hover:bg-white/90">
+                  Registration
+                </button>
               </Link>
             </>
           )}

@@ -1,0 +1,75 @@
+/* Hero Swiper — works with html[data-theme="light"|"dark"] (DaisyUI) */
+
+.slider-hero.swiper {
+  --swiper-theme-color: var(--color-primary-brand, #ff47d0);
+  width: 100%;
+  padding-bottom: 2.75rem;
+}
+
+@media (min-width: 768px) {
+  .slider-hero.swiper {
+    padding-inline: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.slider-hero .swiper-pagination {
+  bottom: 0.25rem !important;
+}
+
+.slider-hero .swiper-pagination-bullet {
+  background: currentColor;
+  opacity: 0.28;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.slider-hero .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--color-primary-brand, #ff47d0);
+}
+
+.slider-hero .swiper-button-prev,
+.slider-hero .swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 9999px;
+  color: var(--color-primary-brand, #ff47d0);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.slider-hero .swiper-button-prev::after,
+.slider-hero .swiper-button-next::after {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+html[data-theme="light"] .slider-hero .swiper-button-prev,
+html[data-theme="light"] .slider-hero .swiper-button-next {
+  background: color-mix(in srgb, white 92%, var(--color-primary-brand, #ff47d0) 8%);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 2px 8px rgb(0 0 0 / 0.06);
+}
+
+html[data-theme="dark"] .slider-hero .swiper-button-prev,
+html[data-theme="dark"] .slider-hero .swiper-button-next {
+  background: color-mix(in srgb, rgb(30 41 59) 88%, white 12%);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
+}
+
+.slider-hero .swiper-button-prev:hover,
+.slider-hero .swiper-button-next:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 767px) {
+  .slider-hero .swiper-button-prev,
+  .slider-hero .swiper-button-next {
+    display: none;
+  }
+
+  .slider-hero.swiper {
+    padding-inline: 0;
+  }
+}

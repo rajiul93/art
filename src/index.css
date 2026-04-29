@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-primary{
-    font-family: "Mochiy Pop One", sans-serif;
+:root {
+  --color-primary-brand: #ff47d0;
+}
+
+.font-primary {
+  font-family: "Mochiy Pop One", sans-serif;
+  color: var(--color-primary-brand);
 }

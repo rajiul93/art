@@ -8,9 +8,8 @@ const Home = () => {
     <div>
       <Slider />
       <Achievement />
-      <div className="bg-secondary-content">
-        <CraftContainer />
-      </div>
+      <CraftContainer />
+
       <Category />
       <OurTeam />
     </div>
